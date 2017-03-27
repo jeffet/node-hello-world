@@ -34,9 +34,22 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 
 app.get('/hello', function(req, res) {
     res.send('Hello World for hello endpoint');
-})
+});
 
 app.get('/sendHelloPage', function(req, res) {
     console.log("Got a GET request for /sendHelloPage");
     res.send('/public/index.html');
+});
+/**
+ * JeffT Adding Form Handling where the form html was added to index.html
+ */
+
+app.get('/process_get', function(req, res) {
+    // Prepare output in JSON format
+    response = {
+        first_name: req.query.first_name,
+        last_name: req.query.last_name
+    };
+    console.log(response);
+    res.end(JSON.stringify(response));
 })
