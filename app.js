@@ -35,3 +35,8 @@ app.listen(appEnv.port, '0.0.0.0', function() {
 app.get('/hello', function(req, res) {
     res.send('Hello World for hello endpoint');
 })
+
+app.get('/sendHelloPage', function(req, res) {
+    console.log("Got a GET request for /sendHelloPage");
+    res.send('/public/index.html');
+})
