@@ -2,3 +2,4 @@ applications:
 - name: node-hello-world-jtenn
   memory: 128M
   buildpack: sdk-for-nodejs
+  host: node-hello-world-jtenn
