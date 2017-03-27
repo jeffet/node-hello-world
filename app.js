@@ -32,6 +32,6 @@ app.listen(appEnv.port, '0.0.0.0', function() {
  * JeffT Adding Hello world for hello endpoint
  */
 
-app.get('/', function(req, res) {
-    res.send('Hello World');
+app.get('/hello', function(req, res) {
+    res.send('Hello World for hello endpoint');
 })
