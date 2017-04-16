@@ -13,25 +13,25 @@
 
 <body>
     
-    <script >
-    
+    <script>
+        var bmsPush = new BMSPush();
         function callback(response) {
             alert(response.response)
         }
-
-        var bmsPush = new BMSPush();
-
         var initParams = {
             "appGUID":"906210dd-337a-4849-be0e-8a66f72a3012",
             "appRegion":".ng.bluemix.net",
             "clientSecret":"887258da-c32b-4011-aef5-76a92acda257"
-
+           
         }
+        
+        console.log("About to call bmsPush")
         bmsPush.initialize(initParams, callback)
         bmsPush.register(function(response) {
             alert(response.response)
         })
-
+    
+    
     
     
     </script>
