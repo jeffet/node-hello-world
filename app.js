@@ -12,19 +12,8 @@ var express = require('express');
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
 
-
-
-
-
-
 // create a new express server
 var app = express();
-
-// add Bluemix Push
-
-//app.use('', express.static(__dirname + 'BMSPushSDK.js'));
-
-
 
 // serve the files out of ./public as our main files
 app.use(express.static(__dirname + '/public'));
@@ -43,15 +32,13 @@ app.listen(appEnv.port, '0.0.0.0', function() {
  * JeffT Adding Hello world for hello endpoint
  */
 
-
-
 app.get('/hello', function(req, res) {
     res.send('Hello World for hello endpoint');
 });
 
 app.get('/sendHelloPage', function(req, res) {
     console.log("Got a GET request for /sendHelloPage");
-    res.send('/public/index.html');
+    res.send('public/index.html');
 });
 /**
  * JeffT Adding Form Handling where the form html was added to index.html
