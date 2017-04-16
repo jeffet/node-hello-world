@@ -6,9 +6,35 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="stylesheets/style.css">
+    
+    <link rel="manifest" href="manifest.json">
+    <script src="BMSPushSDK.js" async></script>
 </head>
 
 <body>
+    
+    <script >
+    
+        function callback(response) {
+            alert(response.response)
+        }
+
+        var bmsPush = new BMSPush();
+
+        var initParams = {
+            "appGUID":"906210dd-337a-4849-be0e-8a66f72a3012",
+            "appRegion":".ng.bluemix.net",
+            "clientSecret":"887258da-c32b-4011-aef5-76a92acda257"
+
+        }
+        bmsPush.initialize(initParams, callback)
+        bmsPush.register(function(response) {
+            alert(response.response)
+        })
+
+    
+    
+    </script>
     <table>
         <tr>
             <td style="width:30%;">
